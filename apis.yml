@@ -18,6 +18,8 @@ apis: []
 common:
   - type: Website
     url: https://www.quad.com
+  - type: LLMsTxt
+    url: https://quad.com/llms.txt
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
