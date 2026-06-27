@@ -18,7 +18,7 @@ apis: []
 common:
   - type: Website
     url: https://www.quad.com
-  - type: LLMsTxt
+  - type: LlmsText
     url: https://quad.com/llms.txt
 maintainers:
   - FN: Kin Lane
