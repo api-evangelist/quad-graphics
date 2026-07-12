@@ -16,10 +16,14 @@ modified: '2026-04-28'
 specificationVersion: '0.19'
 apis: []
 common:
+  - type: DomainSecurity
+    url: security/quad-graphics-domain-security.yml
   - type: Website
     url: https://www.quad.com
   - type: LlmsText
     url: https://quad.com/llms.txt
+  - url: https://www.quad.com/feed
+    type: Blog
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
