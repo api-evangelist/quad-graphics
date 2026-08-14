@@ -1,21 +1,31 @@
 aid: quad-graphics
 accessModel:
   pricing: unknown
-  onboarding: unknown
+  onboarding: sales-gate
   trial: false
   try_now: false
   public: false
-  label: Unknown
-  confidence: low
-  source: []
-  generated: '2026-07-22'
-  method: derived
+  label: Gated
+  confidence: medium
+  source:
+    - https://www.quad.com/solutions/technology/at-home-connect
+  generated: '2026-08-13'
+  method: searched
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/quad-graphics.png
 name: Quad/Graphics
 description: >-
-  Quad/Graphics is a worldwide marketing solutions company that provides print and
-  integrated marketing services helping marketers reach today's consumers across multiple
-  channels.
+  Quad (NYSE: QUAD), formerly Quad/Graphics, is a Sussex, Wisconsin marketing experience
+  company that pairs one of North America's largest commercial printing platforms with
+  data, creative, media and marketing-technology services. Its offer spans audience
+  targeting and consumer analytics, creative and content production through its Betty
+  agency, omnichannel media planning and placement through its Rise agency, catalog,
+  magazine, direct mail and packaging production, in-store retail media displays, postal
+  optimization and logistics, and the QuadMed employee health business. Quad markets three
+  named marketing-technology platforms — At-Home Connect for automated triggered direct
+  mail, Local Connect for multi-location marketing, and In-Store Connect for retail media —
+  and advertises API integration with CRM and marketing-automation platforms for At-Home
+  Connect, but publishes no developer portal, API reference or machine-readable
+  specification for any of them.
 type: Index
 url: >-
   https://raw.githubusercontent.com/api-evangelist/quad-graphics/refs/heads/main/apis.yml
@@ -23,8 +33,14 @@ tags:
   - Marketing
   - Print
   - Media
+  - Advertising
+  - Direct Mail
+  - Marketing Technology
+  - Retail Media
+  - Packaging
+  - Data
 created: '2026-03-24'
-modified: '2026-04-28'
+modified: '2026-08-13'
 specificationVersion: '0.19'
 apis: []
 common:
@@ -36,6 +52,48 @@ common:
     url: https://quad.com/llms.txt
   - url: https://www.quad.com/feed
     type: Blog
+  - type: LLMsTxt
+    url: llms/quad-graphics-llms.txt
+  - type: Authentication
+    url: authentication/quad-graphics-authentication.yml
+  - type: Plans
+    url: plans/quad-graphics-plans-pricing.yml
+  - type: RateLimits
+    url: rate-limits/quad-graphics-rate-limits.yml
+  - type: Support
+    url: https://www.quad.com/contact
+  - type: TermsOfService
+    url: https://www.quad.com/legal/terms-of-service
+  - type: PrivacyPolicy
+    url: https://www.quad.com/legal/privacy-policy
+  - type: GitHubOrganization
+    url: https://github.com/QuadGraphics
+  - type: Login
+    url: https://athomeconnect.quad.com/
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
+x-enrichment:
+  date: '2026-08-13'
+  status: minimal
+  artifacts_added: 6
+  pass: local-v1
+x-coverage:
+  state: gated
+  reason: sales-gate
+  detail: >-
+    Quad markets an At-Home Connect API for triggering direct mail from CRM and marketing
+    automation platforms but publishes no reference for it — the product page's only next
+    step is a contact form to "see if you qualify for early access", and the one reachable
+    Quad API host, api.postal.quad.com, answers 403 to anonymous requests with no
+    WWW-Authenticate challenge and real 404s on every spec path.
+  evidence:
+    - url: https://www.quad.com/solutions/technology/at-home-connect
+      status: 200
+    - url: https://api.postal.quad.com/
+      status: 403
+    - url: https://api.postal.quad.com/openapi.json
+      status: 404
+    - url: https://connect.qg.com/swagger.json
+      status: 401
+  checked: '2026-08-13'
