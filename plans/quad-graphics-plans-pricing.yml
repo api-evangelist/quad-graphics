@@ -1,0 +1,17 @@
+generated: '2026-08-13'
+method: searched
+source: https://www.quad.com/solutions/technology/at-home-connect
+plan_count: 0
+plans: []
+note: >-
+  Quad publishes no pricing, plans, or rate card for any of its products or for the
+  API it markets alongside At-Home Connect. Every commercial surface on quad.com routes
+  to a contact form or a sales conversation ("reach out to Quad ... to see if you
+  qualify"), and the site sitemap carries no /pricing or /plans page. This is an
+  honest zero, not a gap in the search: enterprise print, media and marketing-services
+  contracts are quoted per engagement.
+evidence:
+  - {url: 'https://www.quad.com/solutions/technology/at-home-connect', status: 200}
+  - {url: 'https://www.quad.com/sitemap_index.xml', status: 200, note: 'no pricing/plans page in page-sitemap.xml'}
+  - {url: 'https://www.quad.com/contact', status: 200, note: 'contact-sales is the only commercial path'}
+checked: '2026-08-13'

@@ -1,0 +1,16 @@
+generated: '2026-08-13'
+method: searched
+source: https://www.quad.com/solutions/technology/at-home-connect
+limit_count: 0
+limits: []
+response_headers: []
+note: >-
+  No published rate limits. Quad has no developer portal, no API reference and no
+  machine-readable spec, so there is nothing that states a quota, a window, or the
+  headers its APIs return. The one reachable Quad API host (api.postal.quad.com)
+  answers 403 to anonymous requests and emits no RateLimit-*/X-RateLimit-*/Retry-After
+  headers on that response, so nothing could be observed live either. An honest zero.
+evidence:
+  - {url: 'https://api.postal.quad.com/', status: 403, note: 'response carries no rate-limit headers'}
+  - {url: 'https://www.quad.com/solutions/technology/at-home-connect', status: 200, note: 'markets an API, documents no limits'}
+checked: '2026-08-13'

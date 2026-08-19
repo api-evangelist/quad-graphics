@@ -1,0 +1,66 @@
+generated: '2026-08-13'
+method: probed
+source: live GET probes of /.well-known/* on every Quad-controlled host found
+note: >-
+  Every canonical /.well-known/ path was probed on the four reachable Quad hosts and
+  none returned a real document. No WellKnown or SecurityTxt pointer is emitted from
+  this file: the only 200s came from athomeconnect.quad.com, whose single-page-app
+  catch-all answers 200 with the same HTML shell for every path (identical
+  "<!-- Build: 1.1.7xx.0 -->" document), which is a miss, not a served document.
+  This file records a verified absence.
+hosts:
+  - host: https://www.quad.com
+    role: corporate website (WordPress / Avada)
+    documents:
+      - {path: /.well-known/security.txt, status: 404}
+      - {path: /.well-known/openid-configuration, status: 404}
+      - {path: /.well-known/oauth-authorization-server, status: 404}
+      - {path: /.well-known/oauth-protected-resource, status: 404}
+      - {path: /.well-known/api-catalog, status: 404}
+      - {path: /.well-known/ai-plugin.json, status: 404}
+      - {path: /.well-known/agent-card.json, status: 404}
+      - {path: /.well-known/agent.json, status: 404}
+  - host: https://api.postal.quad.com
+    role: postal-optimization API host (Azure Front Door; 403 anonymous at root)
+    documents:
+      - {path: /.well-known/security.txt, status: 404}
+      - {path: /.well-known/openid-configuration, status: 404}
+      - {path: /.well-known/oauth-authorization-server, status: 404}
+      - {path: /.well-known/oauth-protected-resource, status: 404}
+      - {path: /.well-known/api-catalog, status: 404}
+      - {path: /.well-known/ai-plugin.json, status: 404}
+      - {path: /.well-known/agent-card.json, status: 404}
+      - {path: /.well-known/agent.json, status: 404}
+  - host: https://athomeconnect.quad.com
+    role: At-Home Connect self-service platform (SPA behind Azure AD B2C)
+    spa_catch_all: true
+    documents:
+      - {path: /.well-known/security.txt, status: 200, real_document: false, note: SPA shell}
+      - {path: /.well-known/openid-configuration, status: 200, real_document: false, note: SPA shell}
+      - {path: /.well-known/oauth-authorization-server, status: 200, real_document: false, note: SPA shell}
+      - {path: /.well-known/oauth-protected-resource, status: 200, real_document: false, note: SPA shell}
+      - {path: /.well-known/api-catalog, status: 200, real_document: false, note: SPA shell}
+      - {path: /.well-known/ai-plugin.json, status: 200, real_document: false, note: SPA shell}
+      - {path: /.well-known/agent-card.json, status: 200, real_document: false, note: SPA shell}
+      - {path: /.well-known/agent.json, status: 200, real_document: false, note: SPA shell}
+  - host: https://connect.qg.com
+    role: Client Connect customer portal (401 anonymous on every path)
+    documents:
+      - {path: /.well-known/security.txt, status: 401}
+      - {path: /.well-known/openid-configuration, status: 401}
+      - {path: /.well-known/oauth-authorization-server, status: 401}
+      - {path: /.well-known/oauth-protected-resource, status: 401}
+      - {path: /.well-known/api-catalog, status: 401}
+      - {path: /.well-known/ai-plugin.json, status: 401}
+      - {path: /.well-known/agent-card.json, status: 401}
+      - {path: /.well-known/agent.json, status: 401}
+related_documents:
+  - description: >-
+      Azure AD B2C OpenID Connect discovery document for Quad's `quadb2c` tenant — the
+      identity provider behind the At-Home Connect platform. Saved as evidence for
+      authentication/, NOT counted as a Quad /.well-known/ hit: it is served by
+      Microsoft's b2clogin.com, not by a hostname Quad controls.
+    url: https://quadb2c.b2clogin.com/quadb2c.onmicrosoft.com/B2C_1A_Cloverleaf_Production_SignUpOrSignIn/v2.0/.well-known/openid-configuration
+    status: 200
+    file: quad-graphics-b2c-openid-configuration.json
+checked: '2026-08-13'
