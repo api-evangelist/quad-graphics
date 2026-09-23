@@ -1,7 +1,9 @@
 ---
 title: Quad & Google Cloud to launch AI-powered marketing ...
 url: https://www.quad.com/newsroom/quad-and-google-cloud-to-launch-next-generation-ai-powered-marketing-solutions
-date: '2026-05-25'
+published: ''
+date_basis: harvested
+harvested: '2026-05-25'
 query: '"Quad/Graphics" press release artificial intelligence'
 position: 1
 source: serpapi-google

@@ -1,7 +1,9 @@
 ---
 title: Quad names Dave Honan President alongside COO role
 url: https://www.stocktitan.net/sec-filings/QUAD/8-k-quad-graphics-inc-reports-material-event-363415c2f882.html
-date: '2026-05-25'
+published: ''
+date_basis: harvested
+harvested: '2026-05-25'
 query: '"Quad/Graphics" press release artificial intelligence'
 position: 4
 source: serpapi-google
